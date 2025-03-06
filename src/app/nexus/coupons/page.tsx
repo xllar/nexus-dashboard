@@ -29,7 +29,7 @@ export default function OrderDashboard() {
   }, []);
 
   // Save the selected tab to localStorage whenever it changes
-  const handleTabChange = (tabId) => {
+  const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
     localStorage.setItem('activeTab', tabId);
   };

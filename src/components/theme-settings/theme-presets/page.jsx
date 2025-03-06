@@ -32,7 +32,7 @@ export default function ThemePreset() {
     },
   };
 
-  const handlePresetChange = (preset: string) => {
+  const handlePresetChange = (preset) => {
     setThemePreset(preset);
     const { primaryColor, secondaryColor, backgroundColor, textColor } = themePresets[preset];
     

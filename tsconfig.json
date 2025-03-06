@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/header/page.tsx", "src/components/content/realtimeinsight.tsx", "src/components/content/profit-loss-summary.tsx", "src/components/content/traficsources.tsx", "src/app/nexus/dashboard/order-summary/page.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/header/page.tsx", "src/components/content/realtimeinsight.tsx", "src/components/content/profit-loss-summary.tsx", "src/components/content/traficsources.tsx", "src/app/nexus/dashboard/order-summary/page.js", "src/components/theme-settings/theme-presets/page.jsx", "src/components/theme-settings/widgets-settings/page.jsx"],
   "exclude": ["node_modules"]
 }

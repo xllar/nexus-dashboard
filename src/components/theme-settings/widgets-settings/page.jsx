@@ -10,7 +10,7 @@ export default function WidgetsAndComponents() {
     activity: true,
   });
 
-  const toggleWidget = (widget: string) => {
+  const toggleWidget = (widget) => {
     setWidgets((prevState) => ({
       ...prevState,
       [widget]: !prevState[widget],

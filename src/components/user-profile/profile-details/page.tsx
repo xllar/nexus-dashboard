@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 export default function ProfileDetails() {
   return (
     <div className="space-y-6">
