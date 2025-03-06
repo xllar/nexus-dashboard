@@ -4,9 +4,19 @@ import Header from '@/components/header/page';
 import Footer from '@/components/footer/page';
 import Sidebar from '@/components/sidebar/page';
 
+// Define a type for the shipping rate
+interface ShippingRate {
+  method: string;
+  region: string;
+  fee: string;
+}
+
 export default function RatesAndFeesPage() {
-  const [rates, setRates] = useState([]);
-  const [newRate, setNewRate] = useState({ method: '', region: '', fee: '' });
+  // Explicitly type the `rates` state as an array of `ShippingRate`
+  const [rates, setRates] = useState<ShippingRate[]>([]);
+
+  // Explicitly type the `newRate` state as `ShippingRate`
+  const [newRate, setNewRate] = useState<ShippingRate>({ method: '', region: '', fee: '' });
 
   const handleAddRate = () => {
     if (newRate.method.trim() && newRate.fee.trim()) {

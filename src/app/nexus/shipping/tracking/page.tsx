@@ -4,9 +4,15 @@ import Header from '@/components/header/page';
 import Footer from '@/components/footer/page';
 import Sidebar from '@/components/sidebar/page';
 
+// Define a type for the tracking information
+interface TrackingInfo {
+  status: string;
+  estimatedDelivery: string;
+}
+
 export default function TrackingPage() {
   const [trackingNumber, setTrackingNumber] = useState('');
-  const [trackingInfo, setTrackingInfo] = useState(null);
+  const [trackingInfo, setTrackingInfo] = useState<TrackingInfo | null>(null);
 
   const handleTrackShipment = () => {
     if (trackingNumber.trim()) {

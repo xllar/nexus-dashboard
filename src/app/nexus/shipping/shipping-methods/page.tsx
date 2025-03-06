@@ -4,15 +4,28 @@ import Header from '@/components/header/page';
 import Footer from '@/components/footer/page';
 import Sidebar from '@/components/sidebar/page';
 
+// Define a type for the shipping method
+interface ShippingMethod {
+  name: string;
+  description: string;
+  rate: string;
+  methodType: string;
+  zones: string[];
+  rules: string;
+}
+
 export default function ShippingMethodsPage() {
-  const [shippingMethods, setShippingMethods] = useState([]);
-  const [newMethod, setNewMethod] = useState({
+  // Explicitly type the `shippingMethods` state as an array of `ShippingMethod`
+  const [shippingMethods, setShippingMethods] = useState<ShippingMethod[]>([]);
+
+  // Explicitly type the `newMethod` state as `ShippingMethod`
+  const [newMethod, setNewMethod] = useState<ShippingMethod>({
     name: '',
     description: '',
     rate: '',
-    methodType: 'Standard',  // Default method type
-    zones: [],  // Shipping zones
-    rules: '',  // Shipping rules
+    methodType: 'Standard', // Default method type
+    zones: [], // Shipping zones
+    rules: '', // Shipping rules
   });
 
   const handleAddShippingMethod = () => {
@@ -104,12 +117,12 @@ export default function ShippingMethodsPage() {
                   <div className="flex items-center space-x-2">
                     <input
                       type="text"
-                      onChange={(e) => setNewMethod({ ...newMethod, zones: [...newMethod.zones, e.target.value] })}
+                      onChange={(e) => handleAddZone(e.target.value)}
                       className="w-full px-4 py-2 border rounded-lg focus:outline-none"
                       placeholder="Enter shipping zone"
                     />
                     <button
-                      onClick={() => handleAddZone(newMethod.zones)}
+                      onClick={() => handleAddZone(newMethod.zones[newMethod.zones.length - 1])}
                       className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
                     >
                       Add Zone
