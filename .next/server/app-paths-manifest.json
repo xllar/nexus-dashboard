@@ -1,16 +1,6 @@
 {
   "/page": "app/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/nexus/notifications/page": "app/nexus/notifications/page.js",
-  "/nexus/coupons/page": "app/nexus/coupons/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/nexus/products/all-products/page": "app/nexus/products/all-products/page.js",
-  "/nexus/products/add-new-product/page": "app/nexus/products/add-new-product/page.js",
-  "/nexus/products/product-categories/page": "app/nexus/products/product-categories/page.js",
-  "/nexus/products/inventory-management/page": "app/nexus/products/inventory-management/page.js",
-  "/nexus/customers/customer-groups/page": "app/nexus/customers/customer-groups/page.js",
-  "/nexus/shipping/rates-fees/page": "app/nexus/shipping/rates-fees/page.js",
-  "/nexus/payments/page": "app/nexus/payments/page.js",
-  "/nexus/settings/page": "app/nexus/settings/page.js",
-  "/nexus/help&support/page": "app/nexus/help&support/page.js"
+  "/nexus/orders/page": "app/nexus/orders/page.js"
 }

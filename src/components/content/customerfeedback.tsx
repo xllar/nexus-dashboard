@@ -8,7 +8,7 @@ export default function CustomerFeedback() {
     { customer: 'Jane Smith', rating: 5, comment: 'Excellent experience, highly recommend!', avatar: 'https://randomuser.me/api/portraits/women/2.jpg' },
     { customer: 'Sam Wilson', rating: 3, comment: 'Good product but slow delivery.', avatar: 'https://randomuser.me/api/portraits/men/3.jpg' },
     { customer: 'Emily Johnson', rating: 5, comment: 'I love it! Amazing quality.', avatar: 'https://randomuser.me/api/portraits/women/4.jpg' },
-    { customer: 'Michael Brown', rating: 2, comment: 'Not satisfied, product didn\'t meet expectations.', avatar: 'https://randomuser.me/api/portraits/men/5.jpg' },
+    { customer: 'Michael Brown', rating: 2, comment: 'Not satisfied, product didn&apos;t meet expectations.', avatar: 'https://randomuser.me/api/portraits/men/5.jpg' },
   ];
 
   return (
@@ -58,7 +58,7 @@ export default function CustomerFeedback() {
                   emptyIcon={<StarBorder />}
                 />
                 <Typography variant="body2" sx={{ color: 'text.secondary', fontStyle: 'italic' }}>
-                  "{item.comment}"
+                  &quot;{item.comment}&quot;
                 </Typography>
               </Box>
               <Grid container direction="column" alignItems="flex-end" spacing={1}>

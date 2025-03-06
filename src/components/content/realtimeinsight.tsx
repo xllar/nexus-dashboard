@@ -1,82 +1,133 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
-  Box,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  Divider,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
-  Button,
-  Tooltip,
-  CircularProgress,
+  Box, Typography, Grid, Card, CardContent, Select, MenuItem,
+  FormControl, InputLabel, Button, CircularProgress, useTheme,
+  useMediaQuery, Chip, IconButton, Alert, Snackbar
 } from '@mui/material';
 import { BarChart } from '@mui/x-charts/BarChart';
-import { Gauge } from '@mui/x-charts/Gauge';
 import RefreshIcon from '@mui/icons-material/Refresh';
-import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
+import DownloadIcon from '@mui/icons-material/Download';
+import { Area, AreaChart, ResponsiveContainer, XAxis, YAxis, Tooltip as RechartsTooltip } from 'recharts';
+import axios from 'axios';
 
-const RealTimeInsights: React.FC = () => {
+// Simplified types
+interface DataPoint {
+  date: string;
+  value: number;
+}
+
+interface GaugeItem {
+  label: string;
+  value: number;
+  color: string;
+}
+
+const RealTimeInsights = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  
+  // State management
   const [timeRange, setTimeRange] = useState('monthly');
-  const [sales, setSales] = useState<any[]>([]);
-  const [revenue, setRevenue] = useState<any[]>([]);
+  const [sales, setSales] = useState<DataPoint[]>([]);
+  const [revenue, setRevenue] = useState<DataPoint[]>([]);
+  const [gaugeData, setGaugeData] = useState<GaugeItem[]>([]);
   const [lastUpdated, setLastUpdated] = useState(new Date());
   const [loading, setLoading] = useState(false);
-
-  // Simulate API data fetching
-  const fetchData = async () => {
+  const [error, setError] = useState<string | null>(null);
+  
+  // Generate simulated data
+  const generateData = (min: number, max: number): DataPoint[] => {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return months.map(month => ({
+      date: month,
+      value: Math.floor(Math.random() * (max - min)) + min,
+    }));
+  };
+  
+  // Generate gauge data
+  const generateGaugeData = (): GaugeItem[] => [
+    { label: 'Sales Target', value: Math.floor(Math.random() * 40) + 60, color: theme.palette.primary.main },
+    { label: 'Revenue Growth', value: Math.floor(Math.random() * 30) + 40, color: theme.palette.secondary.main },
+    { label: 'Active Users', value: Math.floor(Math.random() * 25) + 65, color: '#4caf50' }
+  ];
+  
+  // Fetch data from API using useCallback to fix the ESLint warning
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true);
-      // Simulated data fetch logic
-      const mockSales = Array.from({ length: 12 }, (_, i) => ({
-        x: `2024-01-${i + 1}`,
-        y: Math.random() * 1000,
-      }));
-      const mockRevenue = Array.from({ length: 12 }, (_, i) => ({
-        x: `2024-01-${i + 1}`,
-        y: Math.random() * 5000,
-      }));
-
-      setSales(mockSales);
-      setRevenue(mockRevenue);
+      setError(null);
+      
+      // API endpoints
+      const salesResponse = await axios.get(`https://api.example.com/sales?timeRange=${timeRange}`);
+      const revenueResponse = await axios.get(`https://api.example.com/revenue?timeRange=${timeRange}`);
+      const metricsResponse = await axios.get('https://api.example.com/metrics');
+      
+      // Process data
+      setSales(salesResponse.data || generateData(200, 1000));
+      setRevenue(revenueResponse.data || generateData(1000, 5000));
+      setGaugeData(metricsResponse.data || generateGaugeData());
       setLastUpdated(new Date());
     } catch (error) {
       console.error('Error fetching data:', error);
+      setError('Failed to fetch data. Using simulated data.');
+      
+      // Fallback to simulated data
+      setSales(generateData(200, 1000));
+      setRevenue(generateData(1000, 5000));
+      setGaugeData(generateGaugeData());
+      setLastUpdated(new Date());
     } finally {
       setLoading(false);
     }
-  };
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [timeRange]);
+  
+  // Set up data fetching
   useEffect(() => {
     fetchData();
-    const interval = setInterval(fetchData, 10000); // Fetch data every 10 seconds
+    const interval = setInterval(fetchData, 30000);
     return () => clearInterval(interval);
-  }, []);
-
-  const handleRefresh = () => {
-    fetchData();
+  }, [fetchData]);
+  
+  // Export data to CSV
+  const exportToCSV = () => {
+    const salesCSV = sales.map(item => `${item.date},${item.value}`).join('\n');
+    const blob = new Blob([`Date,Sales\n${salesCSV}`], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.setAttribute('hidden', '');
+    a.setAttribute('href', url);
+    a.setAttribute('download', `sales_data_${timeRange}.csv`);
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   };
 
   return (
-    <Box sx={{ p: { xs: 2, md: 4 }, backgroundColor: 'background.default', minHeight: '100vh' }}>
-      {/* Header Section */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 4 }}>
-        <Typography variant="h4" sx={{ fontWeight: 600, color: 'primary.main' }}>
-          Real-Time Insights
-        </Typography>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <FormControl size="small" sx={{ minWidth: 150, mr: 3 }}>
-            <InputLabel id="time-range-label">Time Range</InputLabel>
+    <Box sx={{ p: 2, backgroundColor: theme.palette.background.default }}>
+      {/* Header */}
+      <Box sx={{ 
+        display: 'flex', 
+        flexDirection: isMobile ? 'column' : 'row',
+        justifyContent: 'space-between', 
+        alignItems: isMobile ? 'flex-start' : 'center', 
+        mb: 2
+      }}>
+        <Box>
+          <Typography variant="h5" sx={{ fontWeight: 600, mb: 1 }}>
+            Real-Time Insights
+          </Typography>
+          <Chip label={`${error ? 'Simulated' : 'Live'} Data`} color={error ? 'warning' : 'success'} size="small" />
+        </Box>
+        
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: isMobile ? 2 : 0 }}>
+          <FormControl size="small" sx={{ minWidth: 120 }}>
+            <InputLabel>Time Range</InputLabel>
             <Select
-              labelId="time-range-label"
               value={timeRange}
               onChange={(e) => setTimeRange(e.target.value)}
-              sx={{ backgroundColor: 'background.paper' }}
+              label="Time Range"
             >
               <MenuItem value="daily">Daily</MenuItem>
               <MenuItem value="weekly">Weekly</MenuItem>
@@ -84,127 +135,102 @@ const RealTimeInsights: React.FC = () => {
               <MenuItem value="yearly">Yearly</MenuItem>
             </Select>
           </FormControl>
-          <Tooltip title="Refresh Data">
-            <Button
-              variant="outlined"
-              startIcon={<RefreshIcon />}
-              onClick={handleRefresh}
-              disabled={loading}
-              sx={{ color: 'secondary.main', borderColor: 'secondary.main' }}
-            >
-              {loading ? <CircularProgress size={24} /> : 'Refresh'}
-            </Button>
-          </Tooltip>
+          
+          <IconButton onClick={exportToCSV} size="small">
+            <DownloadIcon />
+          </IconButton>
+          
+          <Button
+            variant="contained"
+            startIcon={loading ? <CircularProgress size={16} /> : <RefreshIcon />}
+            onClick={fetchData}
+            disabled={loading}
+            size="small"
+          >
+            {loading ? 'Loading...' : 'Refresh'}
+          </Button>
         </Box>
       </Box>
 
+      {/* Error notification */}
+      <Snackbar open={!!error} autoHideDuration={6000}>
+        <Alert severity="warning">{error}</Alert>
+      </Snackbar>
+
       {/* Last Updated */}
-      <Typography variant="body2" color="text.secondary" align="right" sx={{ mb: 4 }}>
-        Last updated: {lastUpdated.toLocaleTimeString()}
+      <Typography variant="body2" color="text.secondary" align="right" sx={{ mb: 2 }}>
+        Updated: {lastUpdated.toLocaleTimeString()}
       </Typography>
 
-      {/* Main Insights Section */}
-      <Grid container spacing={4}>
-        {/* Monthly Sales Card */}
+      {/* Charts */}
+      <Grid container spacing={2}>
+        {/* Sales Trend */}
         <Grid item xs={12} md={6}>
-          <Card
-            sx={{
-              borderRadius: 3,
-              boxShadow: 4,
-              transition: 'transform 0.3s',
-              '&:hover': { transform: 'scale(1.02)' },
-              backgroundColor: 'background.paper',
-            }}
-          >
+          <Card>
             <CardContent>
-  <Typography variant="h6" sx={{ fontWeight: 600, color: 'text.primary' }}>
-    Monthly Sales
-  </Typography>
-  <Divider sx={{ my: 2, borderColor: 'primary.main' }} />
-  <ResponsiveContainer width="100%" height={300}>
-    <AreaChart data={sales}>
-      <XAxis dataKey="x" />
-      <YAxis />
-      <Area type="monotone" dataKey="y" stroke="#4caf50" fill="#c8e6c9" />
-    </AreaChart>
-  </ResponsiveContainer>
-</CardContent>
-
-          </Card>
-        </Grid>
-
-        {/* Monthly Revenue Card */}
-        <Grid item xs={12} md={6}>
-          <Card
-            sx={{
-              borderRadius: 3,
-              boxShadow: 4,
-              transition: 'transform 0.3s',
-              '&:hover': { transform: 'scale(1.02)' },
-              backgroundColor: 'background.paper',
-            }}
-          >
-            <CardContent>
-              <Typography variant="h6" sx={{ fontWeight: 600, color: 'text.primary' }}>
-                Monthly Revenue
-              </Typography>
-              <Divider sx={{ my: 2, borderColor: 'primary.main' }} />
-              <BarChart
-                xAxis={[{ data: revenue.map((d) => d.x), scaleType: 'band' }]}
-                series={[{ data: revenue.map((d) => d.y), color: '#ff5722' }]}
-                width={450}
-                height={300}
-              />
+              <Typography variant="subtitle1" sx={{ mb: 1 }}>Sales Trend</Typography>
+              <Box sx={{ height: 240 }}>
+                <ResponsiveContainer width="100%" height="100%">
+                  <AreaChart data={sales} margin={{ top: 5, right: 5, left: 5, bottom: 5 }}>
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <RechartsTooltip />
+                    <Area type="monotone" dataKey="value" stroke={theme.palette.primary.main} fill={`${theme.palette.primary.main}40`} />
+                  </AreaChart>
+                </ResponsiveContainer>
+              </Box>
             </CardContent>
           </Card>
         </Grid>
 
-        {/* Gauge Insights */}
-        <Grid item xs={12}>
-  <Card
-    sx={{
-      borderRadius: 3,
-      boxShadow: 2,
-      p: 4,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      flexWrap: 'wrap',
-      backgroundColor: 'background.paper',
-      color: 'text.primary',
-      gap: 3, // Space between items
-    }}
-  >
-    {[{ label: 'Sales Target', value: 75 }, { label: 'Revenue Growth', value: 50 }, { label: 'Active Users', value: 65 }].map(
-      (gauge, index) => (
-        <Box key={index} sx={{ textAlign: 'center' }}>
-          <Typography
-            variant="body1"
-            sx={{
-              fontWeight: 500,
-              color: 'text.secondary', // Lighter color for a minimalist touch
-              mb: 1, // Margin below the label
-            }}
-          >
-            {gauge.label}
-          </Typography>
-          <Gauge
-            width={100}
-            height={100}
-            value={gauge.value}
-            valueMin={0}
-            valueMax={100}
-            sx={{
-              color: 'primary.main', // Simple primary color for the gauge
-              border: '1px solid #e0e0e0', 
-            }}
-          />
-        </Box>
-      )
-    )}
-  </Card>
-</Grid>
+        {/* Revenue */}
+        <Grid item xs={12} md={6}>
+          <Card>
+            <CardContent>
+              <Typography variant="subtitle1" sx={{ mb: 1 }}>Revenue</Typography>
+              <Box sx={{ height: 240 }}>
+                <BarChart
+                  xAxis={[{ data: revenue.map(d => d.date), scaleType: 'band' }]}
+                  series={[{ data: revenue.map(d => d.value), color: theme.palette.secondary.main }]}
+                  height={240}
+                  width={isMobile ? 280 : 380}
+                />
+              </Box>
+            </CardContent>
+          </Card>
+        </Grid>
 
+        {/* KPIs */}
+        <Grid item xs={12}>
+          <Card>
+            <CardContent>
+              <Typography variant="subtitle1" sx={{ mb: 2 }}>Key Performance Indicators</Typography>
+              <Grid container spacing={2} justifyContent="center">
+                {gaugeData.map((item, index) => (
+                  <Grid item key={index} xs={12} sm={4} sx={{ textAlign: 'center' }}>
+                    <Typography variant="body2">{item.label}</Typography>
+                    <Box sx={{ 
+                      mt: 1, 
+                      p: 1, 
+                      borderRadius: '50%', 
+                      width: 80, 
+                      height: 80, 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      justifyContent: 'center',
+                      border: `4px solid ${item.color}`,
+                      margin: '0 auto'
+                    }}>
+                      <Typography variant="h5" sx={{ color: item.color, fontWeight: 'bold' }}>
+                        {item.value}%
+                      </Typography>
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
     </Box>
   );

@@ -84,21 +84,16 @@ useEffect(() => {
       name: "Analytics/Reports", 
       icon: BarChart, 
       submenu: [
-        { name: "Sales Reports", link: "/analytics/sales-reports" },
-        { name: "Traffic Reports", link: "/analytics/traffic-reports" },
-        { name: "Product Performance", link: "/analytics/product-performance" },
-        { name: "Customer Reports", link: "/analytics/customer-reports" },
+        { name: "Sales Reports", link: "/nexus/analytics/sales-reports" },
+        { name: "Traffic Reports", link: "/nexus/analytics/traffic-reports" },
+        { name: "Product Performance", link: "/nexus/analytics/product-performance" },
+        { name: "Customer Reports", link: "/nexus/analytics/customer-reports" },
       ] 
     },
     { 
       name: "Coupons/Discounts", 
       icon: Tag, 
-      submenu: [
-        { name: "Active Coupons", link: "/coupons/active-coupons" },
-        { name: "Create New Coupon", link: "/coupons/create-new-coupon" },
-        { name: "Expired Coupons", link: "/coupons/expired-coupons" },
-        { name: "Discount Campaigns", link: "/coupons/discount-campaigns" },
-      ] 
+     link: "nexus/coupons"
     },
     { 
       name: "Shipping", 

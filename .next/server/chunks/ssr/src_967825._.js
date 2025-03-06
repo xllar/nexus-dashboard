@@ -175,43 +175,26 @@ function Sidebar() {
             submenu: [
                 {
                     name: "Sales Reports",
-                    link: "/analytics/sales-reports"
+                    link: "/nexus/analytics/sales-reports"
                 },
                 {
                     name: "Traffic Reports",
-                    link: "/analytics/traffic-reports"
+                    link: "/nexus/analytics/traffic-reports"
                 },
                 {
                     name: "Product Performance",
-                    link: "/analytics/product-performance"
+                    link: "/nexus/analytics/product-performance"
                 },
                 {
                     name: "Customer Reports",
-                    link: "/analytics/customer-reports"
+                    link: "/nexus/analytics/customer-reports"
                 }
             ]
         },
         {
             name: "Coupons/Discounts",
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$tag$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Tag$3e$__["Tag"],
-            submenu: [
-                {
-                    name: "Active Coupons",
-                    link: "/coupons/active-coupons"
-                },
-                {
-                    name: "Create New Coupon",
-                    link: "/coupons/create-new-coupon"
-                },
-                {
-                    name: "Expired Coupons",
-                    link: "/coupons/expired-coupons"
-                },
-                {
-                    name: "Discount Campaigns",
-                    link: "/coupons/discount-campaigns"
-                }
-            ]
+            link: "nexus/coupons"
         },
         {
             name: "Shipping",
@@ -286,12 +269,12 @@ function Sidebar() {
                             className: "mb-4 mt-4",
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$sidebar$2f$brandlogo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/src/components/sidebar/page.tsx",
-                                lineNumber: 144,
+                                lineNumber: 139,
                                 columnNumber: 56
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/sidebar/page.tsx",
-                            lineNumber: 144,
+                            lineNumber: 139,
                             columnNumber: 29
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -307,7 +290,7 @@ function Sidebar() {
                                                     className: "w-5 h-5 text-gray-600"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/sidebar/page.tsx",
-                                                    lineNumber: 154,
+                                                    lineNumber: 149,
                                                     columnNumber: 19
                                                 }, this),
                                                 isSidebarOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -318,7 +301,7 @@ function Sidebar() {
                                                             children: menu.name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/sidebar/page.tsx",
-                                                            lineNumber: 157,
+                                                            lineNumber: 152,
                                                             columnNumber: 23
                                                         }, this),
                                                         menu.submenu && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
@@ -326,13 +309,13 @@ function Sidebar() {
                                                                 className: "w-4 h-4 text-gray-600"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/sidebar/page.tsx",
-                                                                lineNumber: 161,
+                                                                lineNumber: 156,
                                                                 columnNumber: 29
                                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                                 className: "w-4 h-4 text-gray-600"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/sidebar/page.tsx",
-                                                                lineNumber: 163,
+                                                                lineNumber: 158,
                                                                 columnNumber: 29
                                                             }, this)
                                                         }, void 0, false)
@@ -341,7 +324,7 @@ function Sidebar() {
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sidebar/page.tsx",
-                                            lineNumber: 148,
+                                            lineNumber: 143,
                                             columnNumber: 17
                                         }, this),
                                         menu.submenu && activeSubmenu === menu.name && isSidebarOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -353,39 +336,39 @@ function Sidebar() {
                                                         children: subitem.name
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sidebar/page.tsx",
-                                                        lineNumber: 174,
+                                                        lineNumber: 169,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, subitem.name, false, {
                                                     fileName: "[project]/src/components/sidebar/page.tsx",
-                                                    lineNumber: 173,
+                                                    lineNumber: 168,
                                                     columnNumber: 23
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sidebar/page.tsx",
-                                            lineNumber: 171,
+                                            lineNumber: 166,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, menu.name, true, {
                                     fileName: "[project]/src/components/sidebar/page.tsx",
-                                    lineNumber: 147,
+                                    lineNumber: 142,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/sidebar/page.tsx",
-                            lineNumber: 145,
+                            lineNumber: 140,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/sidebar/page.tsx",
-                    lineNumber: 143,
+                    lineNumber: 138,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/sidebar/page.tsx",
-                lineNumber: 138,
+                lineNumber: 133,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -409,28 +392,28 @@ function Sidebar() {
                                     d: "M6 18L18 6M6 6l12 12"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sidebar/page.tsx",
-                                    lineNumber: 196,
+                                    lineNumber: 191,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/sidebar/page.tsx",
-                                lineNumber: 195,
+                                lineNumber: 190,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/sidebar/page.tsx",
-                            lineNumber: 191,
+                            lineNumber: 186,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$sidebar$2f$brandlogo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                 fileName: "[project]/src/components/sidebar/page.tsx",
-                                lineNumber: 199,
+                                lineNumber: 194,
                                 columnNumber: 16
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/sidebar/page.tsx",
-                            lineNumber: 199,
+                            lineNumber: 194,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -448,7 +431,7 @@ function Sidebar() {
                                                             className: "w-5 h-5 mr-2 text-gray-600"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/sidebar/page.tsx",
-                                                            lineNumber: 210,
+                                                            lineNumber: 205,
                                                             columnNumber: 21
                                                         }, this),
                                                         " ",
@@ -456,7 +439,7 @@ function Sidebar() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/components/sidebar/page.tsx",
-                                                    lineNumber: 209,
+                                                    lineNumber: 204,
                                                     columnNumber: 19
                                                 }, this),
                                                 menu.submenu && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -464,24 +447,24 @@ function Sidebar() {
                                                         className: "w-4 h-4 text-gray-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sidebar/page.tsx",
-                                                        lineNumber: 217,
+                                                        lineNumber: 212,
                                                         columnNumber: 25
                                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                         className: "w-4 h-4 text-gray-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/sidebar/page.tsx",
-                                                        lineNumber: 219,
+                                                        lineNumber: 214,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/sidebar/page.tsx",
-                                                    lineNumber: 215,
+                                                    lineNumber: 210,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/sidebar/page.tsx",
-                                            lineNumber: 204,
+                                            lineNumber: 199,
                                             columnNumber: 17
                                         }, this),
                                         menu.submenu && activeMobileSubmenu === menu.name && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -495,46 +478,46 @@ function Sidebar() {
                                                                 className: "w-3 h-3 mr-2 text-gray-500"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/components/sidebar/page.tsx",
-                                                                lineNumber: 231,
+                                                                lineNumber: 226,
                                                                 columnNumber: 27
                                                             }, this),
                                                             subitem.name
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/components/sidebar/page.tsx",
-                                                        lineNumber: 230,
+                                                        lineNumber: 225,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, subitem.name, false, {
                                                     fileName: "[project]/src/components/sidebar/page.tsx",
-                                                    lineNumber: 229,
+                                                    lineNumber: 224,
                                                     columnNumber: 23
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/sidebar/page.tsx",
-                                            lineNumber: 227,
+                                            lineNumber: 222,
                                             columnNumber: 19
                                         }, this)
                                     ]
                                 }, menu.name, true, {
                                     fileName: "[project]/src/components/sidebar/page.tsx",
-                                    lineNumber: 203,
+                                    lineNumber: 198,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/sidebar/page.tsx",
-                            lineNumber: 201,
+                            lineNumber: 196,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/sidebar/page.tsx",
-                    lineNumber: 189,
+                    lineNumber: 184,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/sidebar/page.tsx",
-                lineNumber: 186,
+                lineNumber: 181,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -553,17 +536,17 @@ function Sidebar() {
                         d: "M4 6h16M4 12h16m-7 6h7"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sidebar/page.tsx",
-                        lineNumber: 250,
+                        lineNumber: 245,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/sidebar/page.tsx",
-                    lineNumber: 249,
+                    lineNumber: 244,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/sidebar/page.tsx",
-                lineNumber: 245,
+                lineNumber: 240,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -582,23 +565,23 @@ function Sidebar() {
                         d: "M4 6h16M4 12h16m-7 6h7"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sidebar/page.tsx",
-                        lineNumber: 260,
+                        lineNumber: 255,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/sidebar/page.tsx",
-                    lineNumber: 259,
+                    lineNumber: 254,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/sidebar/page.tsx",
-                lineNumber: 255,
+                lineNumber: 250,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/sidebar/page.tsx",
-        lineNumber: 136,
+        lineNumber: 131,
         columnNumber: 5
     }, this);
 }
@@ -3618,11 +3601,7 @@ const RealTimeInsights = ()=>{
             setLoading(false);
         }
     };
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
-        fetchData();
-        const interval = setInterval(fetchData, 10000); // Fetch data every 10 seconds
-        return ()=>clearInterval(interval);
-    }, []);
+    const [lastUpdated, setLastUpdated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
     const handleRefresh = ()=>{
         fetchData();
     };
@@ -3653,7 +3632,7 @@ const RealTimeInsights = ()=>{
                         children: "Real-Time Insights"
                     }, void 0, false, {
                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                        lineNumber: 69,
+                        lineNumber: 65,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -3674,7 +3653,7 @@ const RealTimeInsights = ()=>{
                                         children: "Time Range"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 70,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -3690,7 +3669,7 @@ const RealTimeInsights = ()=>{
                                                 children: "Daily"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                                lineNumber: 81,
+                                                lineNumber: 77,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -3698,7 +3677,7 @@ const RealTimeInsights = ()=>{
                                                 children: "Weekly"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                                lineNumber: 82,
+                                                lineNumber: 78,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -3706,7 +3685,7 @@ const RealTimeInsights = ()=>{
                                                 children: "Monthly"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                                lineNumber: 83,
+                                                lineNumber: 79,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -3714,19 +3693,19 @@ const RealTimeInsights = ()=>{
                                                 children: "Yearly"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                                lineNumber: 84,
+                                                lineNumber: 80,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 75,
+                                        lineNumber: 71,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                lineNumber: 73,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Tooltip$2f$Tooltip$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Tooltip$3e$__["Tooltip"], {
@@ -3735,7 +3714,7 @@ const RealTimeInsights = ()=>{
                                     variant: "outlined",
                                     startIcon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$icons$2d$material$2f$esm$2f$Refresh$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 90,
+                                        lineNumber: 86,
                                         columnNumber: 26
                                     }, void 0),
                                     onClick: handleRefresh,
@@ -3748,29 +3727,29 @@ const RealTimeInsights = ()=>{
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 95,
+                                        lineNumber: 91,
                                         columnNumber: 26
                                     }, this) : 'Refresh'
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                    lineNumber: 88,
+                                    lineNumber: 84,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                lineNumber: 87,
+                                lineNumber: 83,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                        lineNumber: 72,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                lineNumber: 68,
+                lineNumber: 64,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -3786,7 +3765,7 @@ const RealTimeInsights = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                lineNumber: 102,
+                lineNumber: 98,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3818,7 +3797,7 @@ const RealTimeInsights = ()=>{
                                         children: "Monthly Sales"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 116,
                                         columnNumber: 3
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Divider$2f$Divider$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Divider$3e$__["Divider"], {
@@ -3828,7 +3807,7 @@ const RealTimeInsights = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 123,
+                                        lineNumber: 119,
                                         columnNumber: 3
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$component$2f$ResponsiveContainer$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["ResponsiveContainer"], {
@@ -3841,12 +3820,12 @@ const RealTimeInsights = ()=>{
                                                     dataKey: "x"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                                    lineNumber: 126,
+                                                    lineNumber: 122,
                                                     columnNumber: 7
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$YAxis$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["YAxis"], {}, void 0, false, {
                                                     fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                                    lineNumber: 127,
+                                                    lineNumber: 123,
                                                     columnNumber: 7
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$recharts$2f$es6$2f$cartesian$2f$Area$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Area"], {
@@ -3856,34 +3835,34 @@ const RealTimeInsights = ()=>{
                                                     fill: "#c8e6c9"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                                    lineNumber: 128,
+                                                    lineNumber: 124,
                                                     columnNumber: 7
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                            lineNumber: 125,
+                                            lineNumber: 121,
                                             columnNumber: 5
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 124,
+                                        lineNumber: 120,
                                         columnNumber: 3
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                lineNumber: 119,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                            lineNumber: 110,
+                            lineNumber: 106,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                        lineNumber: 109,
+                        lineNumber: 105,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3911,7 +3890,7 @@ const RealTimeInsights = ()=>{
                                         children: "Monthly Revenue"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 148,
+                                        lineNumber: 144,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Divider$2f$Divider$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Divider$3e$__["Divider"], {
@@ -3921,7 +3900,7 @@ const RealTimeInsights = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 151,
+                                        lineNumber: 147,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$x$2d$charts$2f$BarChart$2f$BarChart$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["BarChart"], {
@@ -3941,23 +3920,23 @@ const RealTimeInsights = ()=>{
                                         height: 300
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                        lineNumber: 152,
+                                        lineNumber: 148,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                lineNumber: 147,
+                                lineNumber: 143,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                            lineNumber: 138,
+                            lineNumber: 134,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                        lineNumber: 137,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -4004,7 +3983,7 @@ const RealTimeInsights = ()=>{
                                             children: gauge.label
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                            lineNumber: 181,
+                                            lineNumber: 177,
                                             columnNumber: 11
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$x$2d$charts$2f$Gauge$2f$Gauge$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Gauge"], {
@@ -4019,35 +3998,35 @@ const RealTimeInsights = ()=>{
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                            lineNumber: 191,
+                                            lineNumber: 187,
                                             columnNumber: 11
                                         }, this)
                                     ]
                                 }, index, true, {
                                     fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                                    lineNumber: 180,
+                                    lineNumber: 176,
                                     columnNumber: 9
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                            lineNumber: 164,
+                            lineNumber: 160,
                             columnNumber: 3
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                        lineNumber: 163,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/content/realtimeinsight.tsx",
-                lineNumber: 107,
+                lineNumber: 103,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/content/realtimeinsight.tsx",
-        lineNumber: 66,
+        lineNumber: 62,
         columnNumber: 5
     }, this);
 };
