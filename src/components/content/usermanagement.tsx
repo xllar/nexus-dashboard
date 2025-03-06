@@ -1,9 +1,8 @@
 import React from 'react';
-import { Card, Typography, Box, Grid, Button, Avatar, Stack, Divider, useTheme } from '@mui/material';
+import { Card, Typography, Box, Grid, Button, Avatar, Stack, Divider } from '@mui/material';
 import { PersonAdd, PersonRemove } from '@mui/icons-material';
 
 export default function UserManagement() {
-  const theme = useTheme();
   const users = [
     { name: 'Alice Johnson', email: 'alice@example.com', role: 'Admin', avatar: 'https://randomuser.me/api/portraits/women/1.jpg' },
     { name: 'Bob Smith', email: 'bob@example.com', role: 'User', avatar: 'https://randomuser.me/api/portraits/men/2.jpg' },
