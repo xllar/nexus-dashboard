@@ -43,7 +43,7 @@ interface ChartDataItem {
   color: string;
 }
 
-const RevenueUpdate: React.FC = () => {
+export default function  RevenueUpdate(){ 
   const theme = useTheme();
   const [viewMode, setViewMode] = useState<'weekly' | 'monthly' | 'quarterly'>('monthly');
   
@@ -95,8 +95,8 @@ const RevenueUpdate: React.FC = () => {
       }}
     >
       {/* Header with more information */}
-      <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 3 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'space-between', alignItems: 'center', mb: 3, gap: 2 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 1 }}>
           <Typography
             variant="h6"
             sx={{
@@ -104,6 +104,7 @@ const RevenueUpdate: React.FC = () => {
               color: 'primary.main',
               display: 'flex',
               alignItems: 'center',
+              fontSize: { xs: '1.25rem', sm: '1.5rem' },
             }}
           >
             Revenue Update
@@ -116,12 +117,12 @@ const RevenueUpdate: React.FC = () => {
           <Chip 
             label={`Last updated: ${new Date().toLocaleDateString()}`} 
             size="small" 
-            sx={{ ml: 2 }}
+            sx={{ ml: { xs: 0, sm: 2 } }}
             variant="outlined"
           />
         </Box>
         
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           <ButtonGroup size="small" sx={{ mr: 2 }}>
             <Button 
               variant={viewMode === 'weekly' ? 'contained' : 'outlined'}
@@ -172,9 +173,11 @@ const RevenueUpdate: React.FC = () => {
             display: 'inline-flex',
             alignItems: 'center',
             backgroundColor: theme.palette.primary.light + '20',
+            flexDirection: { xs: 'column', sm: 'row' },
+            gap: 1,
           }}
         >
-          <Typography variant="subtitle1" sx={{ fontWeight: 500, mr: 2 }}>
+          <Typography variant="subtitle1" sx={{ fontWeight: 500, mr: { xs: 0, sm: 2 } }}>
             Total {viewMode} Revenue:
           </Typography>
           <Typography variant="h5" sx={{ fontWeight: 700, color: theme.palette.primary.main }}>
@@ -185,7 +188,7 @@ const RevenueUpdate: React.FC = () => {
             label="↑ 8.2% vs last period" 
             color="success" 
             size="small"
-            sx={{ ml: 2 }}
+            sx={{ ml: { xs: 0, sm: 2 } }}
           />
         </Paper>
       </Box>
@@ -195,7 +198,7 @@ const RevenueUpdate: React.FC = () => {
         <Grid item xs={12} md={6}>
           <Paper
             sx={{
-              height: 280,
+              height: { xs: 200, sm: 280 },
               p: 2,
               backgroundColor: theme.palette.grey[50],
               borderRadius: 2,
@@ -265,7 +268,7 @@ const RevenueUpdate: React.FC = () => {
         <Grid item xs={12} md={6}>
           <Paper
             sx={{
-              height: 280,
+              height: { xs: 'auto', sm: 280 },
               borderRadius: 2,
               p: 2,
               boxShadow: '0 4px 12px rgba(0,0,0,0.05)',
@@ -390,5 +393,3 @@ const RevenueUpdate: React.FC = () => {
     </Box>
   );
 };
-
-export default RevenueUpdate;
